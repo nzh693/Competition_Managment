@@ -15,9 +15,9 @@
         <module>recruit</module>
         <module>system</module>
         <module>salary</module>
-        <module>renren-fast</module>
-        <module>renren-generator</module>
-        
+        <module>gateway</module>
+        <module>admin</module>
+        <module>generator</module>
     </modules>
 
 

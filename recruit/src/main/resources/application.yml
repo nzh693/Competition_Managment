@@ -14,10 +14,10 @@ spring:
       config:
         refresh-enabled: true
         server-addr: 127.0.0.1:8848
+        namespace: 95303e2d-3b80-4f5e-b545-0451585c4313
+        group: group1
   application:
     name: hrrecruit
-
-
 
 #mybatis
 mybatis-plus:

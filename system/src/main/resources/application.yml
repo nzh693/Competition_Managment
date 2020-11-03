@@ -8,12 +8,20 @@ spring:
       username: nzh
       password: 123456
   cloud:
-    #    服务的注册和发现
+    #服务的注册和发现
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+    #阿里云配置
+    alicloud:
+      oss:
+        endpoint: oss-cn-shanghai.aliyuncs.com
+        sts:
+          access-key: LTAI4GC5r56UCqM8pfs3MPTK
+          secret-key: aetrH5EM7oHv7KY81dNqamq9Kcyl9I
   application:
     name: hr_system
+
 
 
 #mybatis
