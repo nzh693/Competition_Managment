@@ -11,12 +11,12 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>evaluation</module>
-        <module>recruit</module>
-        <module>system</module>
-        <module>salary</module>
+        <module>evaluation_service</module>
+        <module>system_service</module>
+        <module>community_service</module>
+        <module>competition_service</module>
         <module>gateway</module>
-        <module>admin</module>
+        <module>common</module>
         <module>generator</module>
     </modules>
 
