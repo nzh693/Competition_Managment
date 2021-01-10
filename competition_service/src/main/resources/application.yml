@@ -3,37 +3,18 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/performance?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-      username: nzh
+      url: jdbc:mysql://localhost:3306/competition?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
       password: 123456
-  cloud:
-    #服务的注册和发现
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
   application:
-    name: hrsalary
-
-
+    name: competition
 
 #mybatis
 mybatis-plus:
-  mapper-locations: classpath*:/mapper/**/*.xml
-  #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.hr.*.entity
-  global-config:
-    #数据库相关配置
-    db-config:
-      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID", ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
-      id-type: AUTO
-      logic-delete-value: -1
-      logic-not-delete-value: 0
-    banner: false
-  #原生配置
+  mapper-locations: classpath*:/mapper/*.xml
   configuration:
-    map-underscore-to-camel-case: true
-    cache-enabled: false
-    call-setters-on-nulls: true
-    jdbc-type-for-null: 'null'
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 server:
   port: 8092
+  servlet:
+    context-path: /restful/api/v1/competition

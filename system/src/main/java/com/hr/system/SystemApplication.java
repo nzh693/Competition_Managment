@@ -1,16 +1,15 @@
-package com.hr.evaluation;
+package com.hr.system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-/**
- * 竞赛问卷服务
- */
 @SpringBootApplication
-public class EvaluationApplication {
+@CrossOrigin
+public class SystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EvaluationApplication.class, args);
+        SpringApplication.run(SystemApplication.class, args);
     }
 
 }

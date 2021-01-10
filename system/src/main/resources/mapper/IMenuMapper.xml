@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hr.system.mapper.IMenuMapper">
+
+
+    <resultMap id="menuMap" type="com.hr.system.po.MenuPo">
+        <id property="id" column="id"></id>
+        <result property="createUserId" column="create_user_id"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="modifyTime" column="modify_time"></result>
+        <result property="deleted" column="deleted"></result>
+        <result property="createUserName" column="create_user_name"></result>
+        <result property="name" column="name"></result>
+        <result property="indexPath" column="index_path"></result>
+        <result property="iconPath" column="icon_path"></result>
+        <result property="visitPower" column="visit_power"></result>
+        <collection property="subMenuList" ofType="com.hr.system.po.MenuSubPo">
+            <result property="subName" column="sub_name"></result>
+            <result property="subIndexPath" column="sub_index_path"></result>
+            <result property="subIconPath" column="sub_icon_path"></result>
+            <result property="subVisitPower" column="sub_visit_power"></result>
+            <result property="menuId" column="menu_id"></result>
+        </collection>
+    </resultMap>
+
+
+    <select id="findMenuByPower" resultMap="menuMap">
+        select * from (select * from menu m where m.visit_power &gt;#{power} ) as t1
+        LEFT OUTER JOIN (select s.sub_name,s.sub_index_path,s.sub_visit_power,s.sub_icon_path,s.menu_id from menu_sub s where s.sub_visit_power &gt; #{power}) as  t2
+        on t1.id=t2.menu_id order by sort
+    </select>
+
+
+</mapper>

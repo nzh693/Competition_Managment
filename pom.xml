@@ -12,12 +12,10 @@
 
     <modules>
         <module>evaluation_service</module>
-        <module>system_service</module>
         <module>community_service</module>
         <module>competition_service</module>
         <module>gateway</module>
         <module>common</module>
-        <module>generator</module>
     </modules>
 
 
